@@ -3,9 +3,7 @@
 ## May 6, 2017
 
 ## Check for dataset, if not found, call readplotdata.R
-if(!exists("pow")) {
-        source("readplotdata.R")
-}
+if(!exists("pow")) {source("readplotdata.R")}
 
 ## Open PNG graphic device
 png(filename = "plot1.png",width=480,height=480)
