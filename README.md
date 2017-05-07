@@ -1,3 +1,11 @@
+## STUDENT INSTRUCTIONS
+
+Hello! Thanks for reviewing my work! I have added 4 PNG files and 5 R scripts. 
+* Please download and unzip the dataset on your own computer and then place all 5 R scripts and the household_power_consumption.txt in the same folder together.
+* Open the R console and set your working directory to the folder holding the scripts and text file.
+* Run plot1.R, plot2.R, plot3.R, and plot4.R to see them in action!
+* <b>NOTE!!!</b> The 5th script, readplotdata.R, is a helper script that is called only when needed to save run time.
+
 ## Introduction
 
 This assignment uses data from
