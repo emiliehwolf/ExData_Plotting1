@@ -7,4 +7,14 @@ if(!exists("pow")) {
         source("readplotdata.R")
 }
 
-## Plot...
+## Open PNG graphic device
+png(filename = "plot2.png",width=480,height=480)
+
+## Plot the line chart to the PNG file
+with(pow, plot(datetime,Global_active_power, type="n", 
+               bg="transparent", xlab='', 
+               ylab='Global Active Power (kilowatts)'))
+with(pow, lines(datetime,Global_active_power))
+
+## Close and save PNG graphic
+dev.off()
