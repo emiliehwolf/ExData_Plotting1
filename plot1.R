@@ -7,4 +7,13 @@ if(!exists("pow")) {
         source("readplotdata.R")
 }
 
-## Plot...
+## Open PNG graphic device
+png(filename = "plot1.png",width=480,height=480)
+
+## Plot the labeled histogram to the PNG file
+with(pow, hist(Global_active_power, col="red",
+               xlab="Global Active Power (kilowatts)",
+               main = "Global Active Power"))
+
+## Close and save PNG graphic
+dev.off()
