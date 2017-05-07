@@ -2,7 +2,10 @@
 ## Emilie H. Wolf
 ## May 6, 2017
 
-## Check for power object, if not found, call readplotdata.R
+## Check for dataset, if not found, call readplotdata.R
+if(!exists("pow")) {
+        source("readplotdata.R")
+}
 
 ## Plot...
 

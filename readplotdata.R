@@ -2,10 +2,26 @@
 ## Emilie H. Wolf
 ## May 6, 2017
 
-## Check for household_power_consumption.txt
-## If not found, check for exdata%2Fdata%2Fhousehold_power_consumption.zip
-## If not found, download and unzip.
+if (!require("data.table")) {
+        install.packages("data.table")
+}
+if (!require("lubridate")) {
+        install.packages("lubridate")
+}
 
-## Read in text file for first 2 days of February in 2007
+library(data.table)
 
-## Tidy up power object
+## Reads in only the rows for Feb 1, 2007 and Feb 2, 2007
+pow <- fread("household_power_consumption.txt", 
+             na.strings="?", skip = 66637, nrows = 2880)
+
+## Reads in the variable names since they were skipped
+names(pow) <- names(fread("household_power_consumption.txt",
+                          nrows = 1, header = TRUE))
+
+## Create a new column called datetime that combines Date and Time
+pow[,datetime:=paste(Date,Time)]
+
+## Change the datetime column from chr to POSIXct
+library(lubridate)
+pow$datetime <- dmy_hms(pow$datetime)
